@@ -11,9 +11,17 @@ julia> collatz_length(13)
 10
 ```
 """
-function collatz_length(n)
-    # TODO: Implementation should go here!
-    return nothing
+function collatz_length(n::Int)
+    long_serie = 1
+    while n != 1
+        if n % 2 == 0 # número par
+            n = n ÷ 2 # \div [tab] división entera devuelve Int
+        else # número impar
+            n = 3n + 1
+        end
+        long_serie += 1
+    end
+    return long_serie
 end
 
 """
